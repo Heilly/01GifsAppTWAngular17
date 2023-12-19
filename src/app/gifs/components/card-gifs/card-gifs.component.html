@@ -1,0 +1,12 @@
+<div class="max-w-sm bg-pink-50 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+
+  <app-lazy-image [alt]="gif!.title" [url]="gif!.images.downsized.url"></app-lazy-image>
+
+<div class="p-5">
+  @if (!gif?.title) {
+    <h5 class="mb-2 text-sm font-bold tracking-tight text-gray-900 dark:text-white">no title</h5>
+  } @else{
+        <h5 class="mb-2 text-sm font-bold tracking-tight text-gray-900 dark:text-white">{{ gif?.title }}</h5>
+  }
+</div>
+</div>

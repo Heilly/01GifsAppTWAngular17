@@ -1,3 +1,30 @@
-<pre>
-  app-sidebar
-</pre>
+
+<section id="drawer-navigation" class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0" tabindex="-1" aria-labelledby="drawer-navigation-label">
+  <div class="h-full px-3 py-7 overflow-y-auto bg-gray-50 dark:bg-gray-800">
+   <h3 class="py-4 text-3xl font-black text-gray-900 dark:text-white text-center">Listado de Gifs</h3>
+     <ul class="space-y-2 font-medium pt-4 ">
+
+   @for (tag of gifsService.tagsHistory(); track $index; let first = $first) {
+         <li>
+            <button (click)="searchTag(tag)"
+               class="w-full relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-500 to-pink-500 group-hover:from-purple-500 group-hover:to-pink-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800">
+               <span [class] ="{
+                  'bg-pink-300' : first
+               }"
+                  class="w-full relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                  {{ tag | uppercase }}
+               </span>
+            </button>
+         </li>
+   } @empty {
+      <p>No hay listado</p>
+   }
+        
+   </ul>
+    </div>
+    
+    
+</section>
+
+
+
