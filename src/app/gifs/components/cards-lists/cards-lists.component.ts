@@ -4,6 +4,7 @@ import { GifsserviceService } from '../../services/gifsservice/gifsservice.servi
 
 import { Gifs } from '../../interfaces/gifs-request.interface';
 import { CardGifsComponent } from '../card-gifs/card-gifs.component';
+import { timeout } from 'rxjs';
 
 @Component({
   selector: 'app-cards-lists',
@@ -12,12 +13,22 @@ import { CardGifsComponent } from '../card-gifs/card-gifs.component';
   imports: [CommonModule, CardGifsComponent],
 })
 export class CardsListsComponent {
+
+  public isCopy : boolean = false;
+
   public gifsService = inject( GifsserviceService );
   public gifsList = computed ( () => this.gifsService.gifsList() );
 
 
 
-  constructor(){
+  constructor(){ }
+
+  isCoped($event : boolean){
     
+    this.isCopy = $event;
+    setTimeout(() => {
+      this.isCopy = false;
+    },3000)
   }
+
 }

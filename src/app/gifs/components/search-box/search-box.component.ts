@@ -26,10 +26,9 @@ export class SearchBoxComponent {
     if(!tag) return;
 
     this.gifService.addTagHistory( tag );
-    this.searchInput.nativeElement.value = '';
+    this.gifService.searchTag(tag).subscribe();
 
-    this.gifService.searchTag(tag)
-          .subscribe( data => console.log(data));
+    this.searchInput.nativeElement.value = '';
   }
 
   

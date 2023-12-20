@@ -2,11 +2,12 @@
 
   <app-lazy-image [alt]="gif!.title" [url]="gif!.images.downsized.url"></app-lazy-image>
 
-<div class="p-5">
+<div class="p-5" (click)="copyUrl(gif!.images.downsized.url)">
   @if (!gif?.title) {
-    <h5 class="mb-2 text-sm font-bold tracking-tight text-gray-900 dark:text-white">no title</h5>
+    <h5 class="mb-2 text-sm font-bold tracking-tight text-gray-900 dark:text-white focus:underline-offset-auto ">no title</h5>
   } @else{
-        <h5 class="mb-2 text-sm font-bold tracking-tight text-gray-900 dark:text-white">{{ gif?.title }}</h5>
+        <h5  
+        class="mb-2 text-sm font-bold tracking-tight text-gray-900 dark:text-white hover:underline-offset-1 hover:underline hover:cursor-pointer">{{ gif?.title }}</h5>
   }
 </div>
 </div>
