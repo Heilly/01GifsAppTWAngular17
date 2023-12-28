@@ -22,9 +22,16 @@ export class CardGifsComponent {
               .then( () => {
                 this.isCopid = true;
                 this.myevent.emit(this.isCopid);
+                //console.log(' url copiada');
+              } );
+              
+    console.log(`if( url === '') return;
+    navigator.clipboard.writeText(url)
+              .then( () => {
+                this.isCopid = true;
+                this.myevent.emit(this.isCopid);
                 console.log(' url copiada');
-              } )
-    console.log(url);
+              } )`);
   }
 
 
